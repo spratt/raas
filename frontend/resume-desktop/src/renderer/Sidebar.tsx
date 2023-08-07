@@ -40,7 +40,7 @@ export default function Sidebar({ width = 255, contentState }) {
       <Button option={contentOptions.hub} contentState={contentState}>Resume Hub</Button>
       <Button option={contentOptions.about} contentState={contentState}>About</Button>
       <Footer width={width}>
-        <Button option={contentOptions.issues} contentState={contentState}>Issues</Button>
+        { /* Do we have anything to put here? */ }
       </Footer>
     </div>
   );

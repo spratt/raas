@@ -2,7 +2,6 @@ import React from 'react';
 import './MainWrapper.module.css';
 import Sidebar from './Sidebar.tsx';
 import About from './content/About.tsx';
-import Issues from './content/Issues.tsx';
 import Resume from './content/Resume.tsx';
 
 const sidebarWidth = 200;
@@ -26,7 +25,6 @@ export default function MainWrapper() {
       }} />
       {selected === contentOptions.local && <Resume marginLeft={sidebarWidth} />}
       {selected === contentOptions.about && <About marginLeft={sidebarWidth} />}
-      {selected === contentOptions.issues && <Issues marginLeft={sidebarWidth} />}
     </>
   );
 }
