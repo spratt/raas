@@ -16,7 +16,7 @@ It was forked from
 
 ![Local Resumes is initially empty.](./docs/02_Empty_Local.png)
 
-![Resume Hub allows the user to download a new resume, which appears in the Local Resumes list.](03_Load_from_Hub.gif)
+![Resume Hub allows the user to download a new resume, which appears in the Local Resumes list.](./docs/03_Load_from_Hub.gif)
 
 ## Starting Development
 
