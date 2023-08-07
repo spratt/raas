@@ -1,0 +1,40 @@
+/*
+ * Styles largely taken from https://foolishdeveloper.com/sidebar-menu-using-html-css-javascript/
+ */
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  background: rgb(5, 68, 104);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding: 20px;
+  transition: all 0.5s ease;
+  font-size: 1.2rem;
+}
+.logo {
+  vertical-align: middle;
+  width: 36px;
+}
+.logoWrapper {
+  margin: 20px 0 20px 0;
+}
+.item {
+  background: rgb(0, 50, 90);
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  color: white;
+}
+.selected {
+  background-color: pink;
+  color: black;
+}
+.itemWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
