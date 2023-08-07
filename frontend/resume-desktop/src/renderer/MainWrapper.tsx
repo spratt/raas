@@ -23,7 +23,7 @@ export default function MainWrapper() {
         selected,
         setSelected,
       }} />
-      {selected === contentOptions.local && <Resume marginLeft={sidebarWidth} />}
+      {selected === contentOptions.local && <Resume marginLeft={sidebarWidth} src="https://docs.google.com/document/d/e/2PACX-1vSJDLv_SUMCkkgJQUzInuSbnS0ubzOEu2hsVzIQOYyFf06R2d5WOykWH41GGb91cneVYhLzIxX3Ss6I/pub?embedded=true" />}
       {selected === contentOptions.about && <About marginLeft={sidebarWidth} />}
     </>
   );

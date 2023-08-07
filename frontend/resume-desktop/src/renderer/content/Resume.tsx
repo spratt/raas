@@ -1,12 +1,23 @@
 import icon from '../../../assets/icon.svg';
 import styles from './Resume.module.css';
 
-export default function Resume({ marginLeft = 0, src }) {
+function Header({ marginLeft = 0, children }) {
+  return (
+    <div className={styles.header}>
+      <button className={styles.backButton}>
+        &lt; { children || "Back" }
+      </button>
+    </div>
+  );
+}
+
+export default function Resume({ marginLeft = 0, src, prev = "" }) {
   return (
     <div className={styles.wrapper} style={{ marginLeft }}>
+      <Header>{ prev }</Header>
       <iframe
         className={styles.resume}
-        src="https://docs.google.com/document/d/e/2PACX-1vSJDLv_SUMCkkgJQUzInuSbnS0ubzOEu2hsVzIQOYyFf06R2d5WOykWH41GGb91cneVYhLzIxX3Ss6I/pub?embedded=true"
+        src={src}
         frameborder="0"
       ></iframe>
     </div>

@@ -7,8 +7,10 @@
   height: 100%;
   margin-right: 0;
   padding-right: 0;
-  padding-top: 40px;
   padding-left: 40px;
+}
+.header {
+  background-color: rgb(5, 68, 104);
 }
 .resume {
   position: absolute;
@@ -16,4 +18,8 @@
   padding: 0;
   width: 62%;
   height: 90%;
+}
+.backButton {
+  background: none;
+  color: white;
 }
