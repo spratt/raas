@@ -3,8 +3,8 @@
 import { contextBridge } from 'electron';
 
 const electronHandler = {
-    // Deliberately left empty
-    // Put any IPC handlers here
+  // Deliberately left empty
+  // Put any IPC handlers here
 };
 
 contextBridge.exposeInMainWorld('electron', electronHandler);

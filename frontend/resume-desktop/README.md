@@ -1,7 +1,7 @@
 # Resume Desktop
 
 Resume Desktop is the frontend component for
-[Resume-As-A-Service](https://github.com/spratt/raas).  It uses the following technologies:
+[Resume-As-A-Service](https://github.com/spratt/raas). It uses the following technologies:
 
 1. Electron
 2. React
@@ -32,4 +32,4 @@ npm run package
 
 ## License
 
-MIT License with various copyright owners.  See LICENSE file for details.
+MIT License with various copyright owners. See LICENSE file for details.

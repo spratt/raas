@@ -9,7 +9,7 @@
  * `./src/main.js` using webpack. This gives us some performance wins.
  */
 import path from 'path';
-import { app, BrowserWindow, shell, ipcMain } from 'electron';
+import { app, BrowserWindow, shell } from 'electron';
 import { autoUpdater } from 'electron-updater';
 import log from 'electron-log';
 import MenuBuilder from './menu';
@@ -23,6 +23,8 @@ class AppUpdater {
   }
 }
 
+// null = null generates an error, which ought to stop evaluation here
+// if the BrowserWindow fails to load
 let mainWindow: BrowserWindow | null = null;
 
 if (process.env.NODE_ENV === 'production') {
@@ -40,7 +42,15 @@ if (isDebug) {
 const installExtensions = async () => {
   const installer = require('electron-devtools-installer');
   const forceDownload = !!process.env.UPGRADE_EXTENSIONS;
-  const extensions = ['REACT_DEVELOPER_TOOLS'];
+  const extensions = [
+    // Don't use react developer tools, because they cause an error
+    // that looks like this:
+    //
+    //   [95845:0807/065900.241006:ERROR:extensions_browser_client.cc(67)] Extension Error
+    //   Source:  chrome-extension://hpngmbpaebnmpdojccibfgcaakipblho/build/background.js
+    //
+    // 'REACT_DEVELOPER_TOOLS'
+  ];
 
   return installer
     .default(
