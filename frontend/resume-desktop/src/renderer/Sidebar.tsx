@@ -10,32 +10,38 @@ function Header() {
   );
 }
 
-function Button({ children, selected = false }) {
+function Button({ children, option, contentState: { contentOptions, selected, setSelected } }) {
+  const isSelected = selected === option;
+  
   return (
     <div className={styles.buttonWrapper}>
-      <button className={`${styles.button} ${selected && styles.selected}`}>
+      <button onClick={() => setSelected(option)} className={`${styles.button} ${isSelected && styles.selected}`}>
         { children }
       </button>
     </div>
   );
 }
 
-function Footer({ width = 255 }) {
+function Footer({ width = 255, children }) {
   return (
     <div style={{ width }} className={styles.footer}>
-      <Button>Issues</Button>
+      {children}
     </div>
   );
 }
 
-export default function Sidebar({ width = 255 }) {
+export default function Sidebar({ width = 255, contentState }) {
+  const { contentOptions } = contentState;
+
   return (
     <div style={{ width }} className={styles.sidebar}>
       <Header />
-      <Button selected={true}>Local Resumes</Button>
-      <Button>Resume Hub</Button>
-      <Button>About</Button>
-      <Footer width={width} />
+      <Button option={contentOptions.local} contentState={contentState}>Local Resumes</Button>
+      <Button option={contentOptions.hub} contentState={contentState}>Resume Hub</Button>
+      <Button option={contentOptions.about} contentState={contentState}>About</Button>
+      <Footer width={width}>
+        <Button option={contentOptions.issues} contentState={contentState}>Issues</Button>
+      </Footer>
     </div>
   );
 }
