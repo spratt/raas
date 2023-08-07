@@ -33,3 +33,7 @@ npm run package
 ## License
 
 MIT License with various copyright owners. See LICENSE file for details.
+
+## Attributions
+
+- Royalty-free document icon from https://pixabay.com/vectors/document-icon-computer-web-309065/
