@@ -1,25 +1,32 @@
 import icon from '../../../assets/icon.svg';
 import styles from './Resume.module.css';
 
-function Header({ marginLeft = 0, children }) {
+const prevStrings = {
+  local: 'Back to Local Resumes',
+  hub: 'Back to Resume Hub',
+};
+
+function Header({ marginLeft = 0, onClick, children }) {
   return (
     <div className={styles.header}>
-      <button className={styles.backButton}>
-        &lt; { children || "Back" }
+      <button className={styles.backButton} onClick={onClick}>
+        &lt; {children || 'Back'}
       </button>
     </div>
   );
 }
 
-export default function Resume({ marginLeft = 0, src, prev = "" }) {
+export default function Resume({
+  marginLeft = 0,
+  src,
+  prev = '',
+  setSelected,
+}) {
+  console.log(`Resume ${marginLeft} ${src} ${prev}`);
   return (
     <div className={styles.wrapper} style={{ marginLeft }}>
-      <Header>{ prev }</Header>
-      <iframe
-        className={styles.resume}
-        src={src}
-        frameborder="0"
-      ></iframe>
+      <Header onClick={() => setSelected(prev)}>{prevStrings[prev]}</Header>
+      <iframe className={styles.resume} src={src} frameborder="0"></iframe>
     </div>
   );
 }

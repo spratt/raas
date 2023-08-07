@@ -9,8 +9,8 @@ export default function About({ marginLeft = 0 }) {
       </div>
       <h1>Resume Desktop</h1>
       <div className={styles.centred}>
-        An app for managing resumes and downloading resumes from a
-        cloud service called Resume Hub.
+        An app for managing resumes and downloading resumes from a cloud service
+        called Resume Hub.
       </div>
     </div>
   );

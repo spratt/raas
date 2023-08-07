@@ -1,0 +1,15 @@
+.wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-left: 60px;
+}
+.table {
+}
+.headerRow {
+  border-bottom: solid 10px black;
+}
+th,
+td {
+  padding: 5px 15px 5px 15px;
+}
