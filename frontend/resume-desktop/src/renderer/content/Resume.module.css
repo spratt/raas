@@ -1,0 +1,19 @@
+.wrapper {
+  overflow-x: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin-right: 0;
+  padding-right: 0;
+  padding-top: 40px;
+  padding-left: 40px;
+}
+.resume {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 62%;
+  height: 90%;
+}
