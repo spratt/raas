@@ -1,4 +1,7 @@
 import React from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import './MainWrapper.module.css';
 import Sidebar from './Sidebar.tsx';
 import About from './content/About.tsx';
@@ -37,6 +40,7 @@ export default function MainWrapper() {
   }, [selected]);
 
   const selectHubResume = React.useCallback((resume) => {
+    toast(`Downloaded ${resume.name}'s Resume!  It will now appear in local resumes.`);
     setLocalResumes([...localResumes, resume]);
     setHubResumes(
       hubResumes.map((hubResume) =>
@@ -70,6 +74,8 @@ export default function MainWrapper() {
           setSelected,
         }}
       />
+      <div style={{ marginLeft: sidebarWidth }}>
+      <ToastContainer />
       {selected === contentOptions.resume && (
         <Resume
           marginLeft={sidebarWidth}
@@ -97,6 +103,7 @@ export default function MainWrapper() {
         />
       )}
       {selected === contentOptions.about && <About marginLeft={sidebarWidth} />}
+      </div>
     </>
   );
 }
