@@ -30,16 +30,13 @@ export default function MainWrapper() {
   const [resumeSrc, setResumeSrc] = React.useState('');
   const [prev, setPrev] = React.useState(contentOptions.about);
 
-  console.log(`MainWrapper ${selected} ${resumeSrc} ${prev}`);
-
-  const selectLocalResume = (resume) => {
+  const selectLocalResume = React.useCallback((resume) => {
     setPrev(contentOptions.local);
     setResumeSrc(resume.src);
     setSelected(contentOptions.resume);
-  };
+  }, [selected]);
 
-  const selectHubResume = (resume) => {
-    console.log(`selectHubResume ${resume}`);
+  const selectHubResume = React.useCallback((resume) => {
     setLocalResumes([...localResumes, resume]);
     setHubResumes(
       hubResumes.map((hubResume) =>
@@ -48,10 +45,9 @@ export default function MainWrapper() {
           : hubResume
       )
     );
-  };
+  }, [selected]);
 
-  const deleteHubResume = (resume) => {
-    console.log(`selectHubResume ${resume}`);
+  const deleteHubResume = React.useCallback((resume) => {
     setLocalResumes(
       localResumes.filter((localResume) => localResume.id !== resume.id)
     );
@@ -62,7 +58,7 @@ export default function MainWrapper() {
           : hubResume
       )
     );
-  };
+  }, [selected]);
 
   return (
     <>

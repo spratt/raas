@@ -22,11 +22,10 @@ export default function Resume({
   prev = '',
   setSelected,
 }) {
-  console.log(`Resume ${marginLeft} ${src} ${prev}`);
   return (
     <div className={styles.wrapper} style={{ marginLeft }}>
       <Header onClick={() => setSelected(prev)}>{prevStrings[prev]}</Header>
-      <iframe className={styles.resume} src={src} frameborder="0"></iframe>
+      <iframe className={styles.resume} src={src} frameBorder="0"></iframe>
     </div>
   );
 }

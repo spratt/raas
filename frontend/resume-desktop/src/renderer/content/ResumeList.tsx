@@ -20,7 +20,7 @@ export default function ResumeList({
         </thead>
         <tbody>
           {resumes.map((resume) => (
-            <tr>
+            <tr key={resume.id}>
               <td>{resume.name}</td>
               <td>{resume.lastModified.toTimeString()}</td>
               <td>
